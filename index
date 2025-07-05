@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pick-a-Number Poem Generator</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      background-color: #fefce8;
+      padding: 2em;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2em;
+    }
+    input, button {
+      font-size: 1.2em;
+      padding: 0.5em 1em;
+      margin: 0.5em;
+    }
+    #poem-box {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 1.5em;
+      margin-top: 2em;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    pre {
+      white-space: pre-wrap;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Pick a Number Poem Generator</h1>
+  <p>Ask a friend to pick a number between 1 and 50</p>
+
+  <input type="number" id="poem-number" min="1" max="50" placeholder="1–50">
+  <button onclick="getPoem()">Show Poem</button>
+
+  <div id="poem-box">
+    <h2 id="title"></h2>
+    <p id="author" style="font-style: italic;"></p>
+    <pre id="body"></pre>
+  </div>
+
+  <script>
+    const poems = [
+      {
+        title: "The Road Not Taken",
+        author: "Robert Frost",
+        body: `Two roads diverged in a yellow wood,\nAnd sorry I could not travel both\nAnd be one traveler, long I stood\nAnd looked down one as far as I could\nTo where it bent in the undergrowth...`
+      },
+      {
+        title: "Hope is the Thing with Feathers",
+        author: "Emily Dickinson",
+        body: `“Hope” is the thing with feathers -\nThat perches in the soul -\nAnd sings the tune without the words -\nAnd never stops - at all...`
+      },
+      {
+        title: "Placeholder Poem",
+        author: "You",
+        body: `This is a placeholder poem.\nFeel free to replace it.\nPoems go here, all lined up,\nReady for you to face it.`
+      }
+      // Add up to 50 poems here!
+    ];
+
+    function getPoem() {
+      const input = document.getElementById("poem-number").value;
+      const index = parseInt(input) - 1;
+
+      if (index >= 0 && index < poems.length) {
+        const poem = poems[index];
+        document.getElementById("title").textContent = poem.title;
+        document.getElementById("author").textContent = "by " + poem.author;
+        document.getElementById("body").textContent = poem.body;
+      } else {
+        alert("Please enter a number between 1 and " + poems.length);
+      }
+    }
+  </script>
+
+</body>
+</html>
