@@ -53,12 +53,21 @@
 <body>
 
   <h1>The Poetry Machine</h1>
-  <p id="instruction">Ask a friend to pick a number between 1 and 5</p>
+  <p id="author" style="font-style: italic; margin-bottom: 1.5em;"></p>
+  <pre id="body"></pre>
 
   <input type="number" id="poem-number" min="1" max="8" placeholder="#">
   <button onclick="getPoem()">Show Poem</button>
 
-  <div id="poem-box">
+ <div id="poem-box" 
+   style="max-width:700px; 
+   margin-left:auto; 
+   margin-right:auto; 
+   background-color:#fff; 
+   border:1px solid #ddd; 
+   padding:1.5em; 
+   box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+  
     <h2 id="title"></h2>
     <p id="author" style="font-style: italic;"></p>
     <pre id="body"></pre>
