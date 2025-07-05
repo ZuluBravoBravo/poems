@@ -111,6 +111,16 @@
     
     ];
 
+      const poemInput = document.getElementById("poem-number");
+      
+      poemInput.addEventListener("focus", function() {
+        this.select();
+      });
+      
+      poemInput.addEventListener("click", function() {
+        this.select();
+      });
+    
     function getPoem() {
       const input = document.getElementById("poem-number").value;
       const index = parseInt(input) - 1;
