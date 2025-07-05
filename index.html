@@ -11,10 +11,11 @@
       padding: 2em;
       text-align: center;
     }
+
     h1 {
       font-size: 2em;
     }
-    
+
     input[type="number"] {
       width: 80px;
       font-size: 1.2em;
@@ -22,7 +23,7 @@
       margin: 0.5em;
       text-align: center;
     }
-    
+
     button {
       font-size: 1.2em;
       padding: 0.5em 1em;
@@ -34,42 +35,37 @@
       border: 1px solid #ddd;
       padding: 1.5em;
       margin-top: 2em;
-      max-width: auto;
+      max-width: 700px;
       margin-left: auto;
       margin-right: auto;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
-    
+
     pre {
       white-space: pre-wrap;
       text-align: left;
       max-width: 600px;
       margin-left: auto;
-      margin-right: auto; 
+      margin-right: auto;
     }
-    
+
+    #author {
+      font-style: italic;
+      margin-bottom: 1.5em;
+    }
   </style>
 </head>
 <body>
 
   <h1>The Poetry Machine</h1>
-  <p id="author" style="font-style: italic; margin-bottom: 1.5em;"></p>
-  <pre id="body"></pre>
+  <p id="instruction">Ask a friend to pick a number</p>
 
-  <input type="number" id="poem-number" min="1" max="8" placeholder="#">
+  <input type="number" id="poem-number" placeholder="#" />
   <button onclick="getPoem()">Show Poem</button>
 
- <div id="poem-box" 
-   style="max-width:700px; 
-   margin-left:auto; 
-   margin-right:auto; 
-   background-color:#fff; 
-   border:1px solid #ddd; 
-   padding:1.5em; 
-   box-shadow:0 2px 6px rgba(0,0,0,0.1);">
-  
+  <div id="poem-box">
     <h2 id="title"></h2>
-    <p id="author" style="font-style: italic;"></p>
+    <p id="author"></p>
     <pre id="body"></pre>
   </div>
 
@@ -80,66 +76,61 @@
         author: "Robert Frost",
         body: `Two roads diverged in a yellow wood,\nAnd sorry I could not travel both\nAnd be one traveler, long I stood\nAnd looked down one as far as I could\nTo where it bent in the undergrowth;\n\nThen took the other, as just as fair,\nAnd having perhaps the better claim,\nBecause it was grassy and wanted wear;\nThough as for that the passing there\nHad worn them really about the same,\n\nAnd both that morning equally lay\nIn leaves no step had trodden black.\nOh, I kept the first for another day!\nYet knowing how way leads on to way,\nI doubted if I should ever come back.\n\nI shall be telling this with a sigh\nSomewhere ages and ages hence:\nTwo roads diverged in a wood, and I—\nI took the one less traveled by,\nAnd that has made all the difference.`
       },
-            
       {
         title: "Hope is the Thing with Feathers",
         author: "Emily Dickinson",
         body: `“Hope” is the thing with feathers -\nThat perches in the soul -\nAnd sings the tune without the words -\nAnd never stops - at all -\n\nAnd sweetest - in the Gale - is heard -\nAnd sore must be the storm -\nThat could abash the little Bird\nThat kept so many warm -\n\nI’ve heard it in the chillest land -\nAnd on the strangest Sea -\nYet - never - in Extremity,\nIt asked a crumb - of Me.`
       },
-
       {
         title: "Bhagavad Gita 2.47",
         author: "Anonymous (Bhagavad Gita)",
         body: `You have a right to perform your prescribed duties,\nbut you are not entitled to the fruits of your actions.\nNever consider yourself to be the cause of the results of your activities,\nnor be attached to inaction.`
       },
-
       {
         title: "The Lake Isle of Innisfree",
         author: "W.B. Yeats",
         body: `I will arise and go now, and go to Innisfree,\nAnd a small cabin build there, of clay and wattles made;\nNine bean-rows will I have there, a hive for the honeybee,\nAnd live alone in the bee-loud glade.\n\nAnd I shall have some peace there, for peace comes dropping slow,\nDropping from the veils of the morning to where the cricket sings;\nThere midnight's all a glimmer, and noon a purple glow,\nAnd evening full of the linnet's wings.\n\nI will arise and go now, for always night and day\nI hear lake water lapping with low sounds by the shore;\nWhile I stand on the roadway, or on the pavements grey,\nI hear it in the deep heart's core.`
       },
-      
       {
         title: "Ozymandias",
         author: "Percy Bysshe Shelley",
         body: `I met a traveller from an antique land,\nWho said: “Two vast and trunkless legs of stone\nStand in the desert…\nNear them, on the sand,\nHalf sunk, a shattered visage lies,\nWhose frown, and wrinkled lip, and sneer of cold command\nTell that its sculptor well those passions read…\nAnd on the pedestal these words appear:\n‘My name is Ozymandias, king of kings:\nLook on my works, ye Mighty, and despair!’\nNothing beside remains. Round the decay\nOf that colossal wreck, boundless and bare\nThe lone and level sands stretch far away.”`
       },
-
       {
         title: "Tao Te Ching, Chapter 12",
         author: "Lao Tzu",
         body: `The five colors blind the eye.\nThe five tones deafen the ear.\nThe five flavors dull the taste.\nRacing and hunting madden the mind.\nPrecious things lead one astray.\n\nTherefore the sage is guided by what he feels and not by what he sees.\nHe lets go of that and chooses this.`
       },
-
       {
         title: "Sick",
         author: "Shel Silverstein",
         body: `"I cannot go to school today,"\nSaid little Peggy Ann McKay.\n"I have the measles and the mumps,\nA gash, a rash and purple bumps.\nMy mouth is wet, my throat is dry,\nI'm going blind in my right eye.\nMy tonsils are as big as rocks,\nI've counted sixteen chicken pox\nAnd there's one more—that's seventeen,\nAnd don't you think my face looks green?\nMy leg is cut—my eyes are blue—\nIt might be instamatic flu.\n...G'bye, I'm going out to play!"`
       },
-    
       {
         title: "The Charge of the Light Brigade",
         author: "Alfred, Lord Tennyson",
         body: `Half a league, half a league,\nHalf a league onward,\nAll in the valley of Death\nRode the six hundred.\n"Forward, the Light Brigade!\nCharge for the guns!" he said:\nInto the valley of Death\nRode the six hundred.\n\n"Forward, the Light Brigade!"\nWas there a man dismay'd?\nNot tho' the soldier knew\nSomeone had blunder'd:\nTheirs not to make reply,\nTheirs not to reason why,\nTheirs but to do and die:\nInto the valley of Death\nRode the six hundred.\n\nCannon to right of them,\nCannon to left of them,\nCannon in front of them\nVolley'd and thunder'd;\nStorm'd at with shot and shell,\nBoldly they rode and well,\nInto the jaws of Death,\nInto the mouth of Hell\nRode the six hundred.\n\nFlashed all their sabres bare,\nFlashed as they turn'd in air,\nSabring the gunners there,\nCharging an army, while\nAll the world wonder'd:\nPlunged in the battery-smoke\nRight thro' the line they broke;\nCossack and Russian\nReel'd from the sabre-stroke\nShatter'd and sunder'd.\nThen they rode back, but not\nNot the six hundred.\n\nCannon to right of them,\nCannon to left of them,\nCannon behind them\nVolley'd and thunder'd;\nStorm'd at with shot and shell,\nWhile horse and hero fell,\nThey that had fought so well\nCame thro' the jaws of Death,\nBack from the mouth of Hell,\nAll that was left of them,\nLeft of six hundred.\n\nWhen can their glory fade?\nO the wild charge they made!\nAll the world wonder'd.\nHonor the charge they made!\nHonor the Light Brigade,\nNoble six hundred!`
-      },
-    
+      }
     ];
 
+    // Dynamically set instruction text and input limits
     document.getElementById("instruction").textContent =
-    "Ask a friend to pick a number between 1 and " + poems.length;
-    
+      "Ask a friend to pick a number between 1 and " + poems.length;
+
     const poemInput = document.getElementById("poem-number");
-      
-      poemInput.addEventListener("focus", function() {
-        this.select();
-      });
-      
-      poemInput.addEventListener("click", function() {
-        this.select();
-      });
-    
+    poemInput.setAttribute("min", "1");
+    poemInput.setAttribute("max", poems.length.toString());
+
+    // Auto-select number field on click/focus
+    poemInput.addEventListener("focus", function () {
+      this.select();
+    });
+    poemInput.addEventListener("click", function () {
+      this.select();
+    });
+
     function getPoem() {
-      const input = document.getElementById("poem-number").value;
+      const input = poemInput.value;
       const index = parseInt(input) - 1;
 
       if (index >= 0 && index < poems.length) {
@@ -155,4 +146,3 @@
 
 </body>
 </html>
-
